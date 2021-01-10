@@ -2,12 +2,12 @@
 // SECRET PLANS
 //
 // secret plans for v0.2, please do not read if you don't wanna be spoiled:
-// marine: lobsters, clams
+// marine: lobsters?
 // haven: dolphins, whales, and coral
-// chaotic: ??? possibly just throw in things as a chaotic mish-mash
-// tempestuous: swordfish, some new resource?
-// violent: shrimp, coral, sponge, algae, crustacean machines
-// abandoned: octopuses, sponge and clams?
+// chaotic: ??? nothing just get rid of it
+// tempestuous: swordfish, the storm
+// violent: shrimp, coral, sponge, algae, crustacean machines?
+// abandoned: octopuses, sponge and clams
 // shrouded: eels, chimaera, and jellyfish, no crabs
 // frigid: squid and urchins, squids replace rays, maybe sponge or clams? or new resource?
 //

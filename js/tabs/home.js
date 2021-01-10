@@ -8,81 +8,124 @@ SharkGame.Home = {
     currentExtraMessageIndex: null,
 
     // Priority: later messages display if available, otherwise earlier ones.
-    extraMessages: [
+    extraMessages: {
         // FIRST RUN
-        {
-            message: "&nbsp<br>&nbsp",
+        start: {
+            {
+                id: "starter_initial",
+                message: "&nbsp<br>&nbsp",
+            },
+            {
+                id: "starter_shark",
+                unlock: { resource: { fish: 5 } },
+                message: "You attract the attention of a shark. Maybe they can help you catch fish!<br>&nbsp",
+            },
+            {
+                id: "starter_sharks",
+                unlock: { resource: { shark: 1 } },
+                message: "More sharks swim over, curious and watchful.<br>&nbsp",
+            },
+            {
+                id: "starter_rays",
+                unlock: { resource: { fish: 15 } },
+                message: "Some rays drift over.<br>&nbsp",
+            },
+            {
+                id: "starter_sharks_and_rays",
+                unlock: { resource: { shark: 1, ray: 1 } },
+                message: "You have quite the group going now.<br>&nbsp",
+            },
+            {
+                id: "starter_crab",
+                unlock: { resource: { shark: 4, ray: 4 } },
+                message: "Some curious crabs come over.<br>&nbsp",
+            },
+            {
+                id: "starter_group",
+                unlock: { resource: { shark: 1, ray: 1, crab: 1 } },
+                message: "Your new tribe is at your command!<br>&nbsp",
+            },
+            {
+                id: "starter_crystals",
+                unlock: { resource: { shark: 1, crystal: 10 } },
+                message: "The crystals are shiny. Some sharks stare at them curiously.<br>&nbsp",
+            },
+            {
+                id: "starter_science",
+                unlock: { resource: { scientist: 1 } },
+                message: "The science sharks swim in their own school.<br>&nbsp",
+            },
+            {
+                id: "starter_discoveries",
+                unlock: { upgrade: ["crystalContainer"] },
+                message: "More discoveries are needed.<br>&nbsp",
+            },
+            {
+                id: "starter_growth",
+                unlock: { resource: { nurse: 1 } },
+                message: "The shark community grows with time.<br>&nbsp",
+            },
+            {
+                id: "starter_exploration",
+                unlock: { upgrade: ["exploration"] },
+                message: "You hear faint songs and cries in the distance.<br>&nbsp",
+            },
+            {
+                id: "starter_automation",
+                unlock: { upgrade: ["automation"] },
+                message: "Machines to do things for you.<br>Machines to do things faster than you or any shark.",
+            },
+            {
+                id: "starter_far_exploration",
+                unlock: { upgrade: ["farExploration"] },
+                message: "This place is not your home. You remember a crystal blue ocean.<br>The chasms beckon.",
+            },
+            {
+                id: "starter_chasm",
+                unlock: { upgrade: ["gateDiscovery"] },
+                message: "The gate beckons. The secret must be unlocked.<br>&nbsp",
+            },
         },
-        {
-            unlock: { resource: { fish: 5 } },
-            message: "You attract the attention of a shark. Maybe they can help you catch fish!<br>&nbsp",
-        },
-        {
-            unlock: { resource: { shark: 1 } },
-            message: "More sharks swim over, curious and watchful.<br>&nbsp",
-        },
-        {
-            unlock: { resource: { fish: 15 } },
-            message: "Some rays drift over.<br>&nbsp",
-        },
-        {
-            unlock: { resource: { shark: 1, ray: 1 } },
-            message: "You have quite the group going now.<br>&nbsp",
-        },
-        {
-            unlock: { resource: { shark: 4, ray: 4 } },
-            message: "Some curious crabs come over.<br>&nbsp",
-        },
-        {
-            unlock: { resource: { shark: 1, ray: 1, crab: 1 } },
-            message: "Your new tribe is at your command!<br>&nbsp",
-        },
-        {
-            unlock: { resource: { shark: 1, crystal: 10 } },
-            message: "The crystals are shiny. Some sharks stare at them curiously.<br>&nbsp",
-        },
-        {
-            unlock: { resource: { scientist: 1 } },
-            message: "The science sharks swim in their own school.<br>&nbsp",
-        },
-        {
-            unlock: { upgrade: ["crystalContainer"] },
-            message: "More discoveries are needed.<br>&nbsp",
-        },
-        {
-            unlock: { resource: { nurse: 1 } },
-            message: "The shark community grows with time.<br>&nbsp",
-        },
-        {
-            unlock: { upgrade: ["exploration"] },
-            message: "You hear faint songs and cries in the distance.<br>&nbsp",
-        },
-        {
-            unlock: { upgrade: ["automation"] },
-            message: "Machines to do things for you.<br>Machines to do things faster than you or any shark.",
-        },
-        {
-            unlock: { upgrade: ["farExploration"] },
-            message: "This place is not your home. You remember a crystal blue ocean.<br>The chasms beckon.",
-        },
-        {
-            unlock: { upgrade: ["gateDiscovery"] },
-            message: "The gate beckons. The secret must be unlocked.<br>&nbsp",
-        },
+        marine: {
+            {
+                id: "marine_start",
+                unlock: { world: "marine" },
+                message: "The fish never run dry here. This place feels so familiar.<br>&nbsp",
+            },
+            {
+                id: "marine_shrimp",
+                unlock: { resource: { shrimp: 50 } },
+                message: "The shrimps are tiny, but hard-working.<br>They live for their sponge hives.",
+            },
+            {
+                id: "marine_lobster",
+                unlock: { resource: { lobster: 20 } },
+                message: "The lobsters work, but seem carefree.<br>They worry about nothing.",
+            },
+        }
+        haven: {
+            {
+                id: "haven_start",
+                unlock: { world: "haven" },
+                message: "The oceans are rich with life. But it's still not home.<br>&nbsp",
+            },
+            {
+                id: "haven_dolphin",
+                unlock: { resource: { dolphin: 5 } },
+                message:
+                    "The dolphin pods that work with us speak of an star-spanning empire of their kind.<br>They ask where our empire is. And they smile.",
+            },
+            {
+                id: "haven_whales",
+                unlock: { resource: { whale: 1 } },
+                message:
+                    "The whales speak rarely to us, working in silence as they sing to the ocean.<br>What do they sing for?",
+            },
+        }
+        
         // LATER RUNS
         // INITIAL WORLD STATUSES
-        {
-            unlock: { world: "chaotic" },
-            message: "Overwhelming reinforcements. Overwhelming everything. So hard to focus.<br>&nbsp",
-        },
-        {
-            unlock: { world: "haven" },
-            message: "The oceans are rich with life. But it's still not home.<br>&nbsp",
-        },
-        {
-            unlock: { world: "marine" },
-            message: "The fish never run dry here. This place feels so familiar.<br>&nbsp",
-        },
+        
         {
             unlock: { world: "tempestuous" },
             message: "The storm never ends, and many are lost to its violent throes.<br>&nbsp",
@@ -112,32 +155,16 @@ SharkGame.Home = {
         },
         // NEW ANIMALS
         {
-            unlock: { resource: { shrimp: 50 } },
-            message: "The shrimps are tiny, but hard-working.<br>They live for their sponge hives.",
-        },
-        {
-            unlock: { resource: { lobster: 20 } },
-            message: "The lobsters work, but seem carefree.<br>They worry about nothing.",
-        },
-        {
             unlock: { resource: { eel: 10 } },
             message: "The eels chatter among their hiding places.<br>They like the sharks.",
         },
-        {
-            unlock: { resource: { dolphin: 5 } },
-            message:
-                "The dolphin pods that work with us speak of an star-spanning empire of their kind.<br>They ask where our empire is. And they smile.",
-        },
+        
         {
             unlock: { resource: { octopus: 8 } },
             message:
                 "The octopuses speak of production and correct action. They speak of unity through efficiency.<br>They regard us with cold, neutral eyes.",
         },
-        {
-            unlock: { resource: { whale: 1 } },
-            message:
-                "The whales speak rarely to us, working in silence as they sing to the ocean.<br>What do they sing for?",
-        },
+        
         {
             unlock: { resource: { chimaera: 5 } },
             message:
@@ -174,7 +201,7 @@ SharkGame.Home = {
             message:
                 "The cold, jagged seafloor looks ancient, yet pristine.<br>Sponges thrive in great numbers on the rocks.",
         }, */
-    ],
+    },
 
     init() {
         const h = SharkGame.Home;
@@ -325,11 +352,11 @@ SharkGame.Home = {
         const h = SharkGame.Home;
         const r = SharkGame.Resources;
         const u = SharkGame.Upgrades.getUpgradeTable();
-        const wi = SharkGame.WorldTypes[SharkGame.World.worldType];
-        let selectedIndex = h.currentExtraMessageIndex;
-        $.each(h.extraMessages, (messageIndex, extraMessage) => {
-            let showThisMessage = true;
-            // check if should show this message
+        const wt = SharkGame.World.worldType;
+        const wi = SharkGame.WorldTypes[wt];
+        const messages = h.extraMessages[wt];
+
+
             if (extraMessage.unlock) {
                 if (extraMessage.unlock.resource) {
                     $.each(extraMessage.unlock.resource, (key, resource) => {
@@ -345,10 +372,7 @@ SharkGame.Home = {
                     showThisMessage = showThisMessage && SharkGame.World.worldType === extraMessage.unlock.world;
                 }
             }
-            if (showThisMessage) {
-                selectedIndex = messageIndex;
-            }
-        });
+
         // only edit DOM if necessary
         if (h.currentExtraMessageIndex !== selectedIndex) {
             h.currentExtraMessageIndex = selectedIndex;
@@ -367,7 +391,7 @@ SharkGame.Home = {
             const extraMessageSel = $("#extraMessage");
             if (!suppressAnimation && SharkGame.Settings.current.showAnimations) {
                 extraMessageSel.animate({ opacity: 0 }, 200, () => {
-                    $(extraMessageSel).animate({ opacity: 1 }, 200).html(h.extraMessages[selectedIndex].message);
+                    $(extraMessageSel).animate({ opacity: 1 }, 200).html(messages[selectedIndex].message);
                 });
                 sceneDiv.animate({ opacity: 0 }, 500, () => {
                     if (SharkGame.Settings.current.showTabImages) {
@@ -381,7 +405,7 @@ SharkGame.Home = {
                     $(sceneDiv).animate({ opacity: 1 }, 500);
                 });
             } else {
-                extraMessageSel.html(h.extraMessages[selectedIndex].message);
+                extraMessageSel.html(messages[selectedIndex].message);
                 if (SharkGame.Settings.current.showTabImages) {
                     SharkGame.changeSprite(
                         SharkGame.spriteHomeEventPath,
